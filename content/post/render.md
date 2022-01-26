@@ -10,3 +10,6 @@ TODO: get this badboy on Render.com
 2. Register (with Github)
    a. (Act on your behalf): looks like it will only be able to do that on resources I grant the app access to
 3. New Static Site
+4. Push this thing to Github
+  a. looks like it needs to be public, but I guess that's the point anyway
+5. Go back and actually add the public assets

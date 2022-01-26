@@ -21,4 +21,4 @@ TODO: get this badboy on Render.com
 Overall it took about 20 minutes.
 
 Some things I might do to make it smoother:
-- a pre-push hook that does `rm ./public && hugo`
+- a pre-push hook that does `rm -rf ./public && hugo`

@@ -10,6 +10,14 @@ I read a few posts awhile back (I'll link to them at some point, [Will Larson](h
 
 That's something I liked.  That it's mostly for me, but I can keep iterating on it.
 
+https://joelhooks.com/digital-garden
+
+https://lethain.com/exuberant-sketches/
+
+https://tomcritchlow.com/2019/02/17/building-digital-garden/
+
+
+
 ### Nesting
 
 One of the things I found compelling this week was building a floorplan of the apartment I'm renting with my partner.  I used "SweetHome 3D", an open source app (after a lot of googling, and looking at pricing pages). The initial requirement was so that my partner could start strategizing for a couch purchase, and try to figure out what would fit where.  But I found myself continuing past the point that I met that requirement.  It felt like I was making a little home. 

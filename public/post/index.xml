@@ -6,15 +6,24 @@
     <description>Recent content in Posts on Paul&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Jan 2022 20:51:41 +0000</lastBuildDate><atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 20:29:41 +0000</lastBuildDate><atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Economist odds and aends</title>
+      <link>http://example.org/post/economist/</link>
+      <pubDate>Thu, 27 Jan 2022 20:29:41 +0000</pubDate>
+      
+      <guid>http://example.org/post/economist/</guid>
+      <description>I got a subscription to the Economist for Christmas this year (Thanks Taylor!). I&amp;rsquo;ve tried to read the whole thing cover to cover each week, but I&amp;rsquo;ve never been close to being up to speed (Currently a full issue plus some behind). That goal came from this tweet:
+I read @TheEconomist cover-to-cover because its content makes me think critically about the world. Its editors recently asked me a tough question: What is the one thing you&amp;#39;d do to create a more open world?</description>
+    </item>
+    
     <item>
       <title>Render</title>
       <link>http://example.org/post/render/</link>
       <pubDate>Tue, 25 Jan 2022 20:51:41 +0000</pubDate>
       
       <guid>http://example.org/post/render/</guid>
-      <description>TODO: get this badboy on Render.com
- Render.com Register (with Github) a. (Act on your behalf): looks like it will only be able to do that on resources I grant the app access to New Static Site Push this thing to Github a. looks like it needs to be public, but I guess that&amp;rsquo;s the point anyway i. This got me thinking about how my github might actually get more traffic from people I know versus my blog which is exclusively strangers afaict.</description>
+      <description>Render.com Register (with Github) a. (Act on your behalf): looks like it will only be able to do that on resources I grant the app access to New Static Site Push this thing to Github a. looks like it needs to be public, but I guess that&amp;rsquo;s the point anyway i. This got me thinking about how my github might actually get more traffic from people I know versus my blog which is exclusively strangers afaict.</description>
     </item>
     
     <item>
@@ -25,6 +34,9 @@
       <guid>http://example.org/post/garden/</guid>
       <description>Gardening I read a few posts awhile back (I&amp;rsquo;ll link to them at some point, Will Larson) about a digital garden. Something that&amp;rsquo;s a little messy, your little corner of the internet. It&amp;rsquo;s not fully edited, it&amp;rsquo;s not trying to be anything.
 That&amp;rsquo;s something I liked. That it&amp;rsquo;s mostly for me, but I can keep iterating on it.
+https://joelhooks.com/digital-garden
+https://lethain.com/exuberant-sketches/
+https://tomcritchlow.com/2019/02/17/building-digital-garden/
 Nesting One of the things I found compelling this week was building a floorplan of the apartment I&amp;rsquo;m renting with my partner.</description>
     </item>
     

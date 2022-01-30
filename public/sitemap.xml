@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>http://example.org/post/economist/</loc>
+    <lastmod>2022-01-27T20:29:41+00:00</lastmod>
+  </url><url>
     <loc>http://example.org/</loc>
-    <lastmod>2022-01-25T20:51:41+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2022-01-27T20:29:41+00:00</lastmod>
+  </url><url>
     <loc>http://example.org/post/</loc>
-    <lastmod>2022-01-25T20:51:41+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2022-01-27T20:29:41+00:00</lastmod>
+  </url><url>
     <loc>http://example.org/post/render/</loc>
     <lastmod>2022-01-25T20:51:41+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://example.org/post/garden/</loc>
     <lastmod>2022-01-25T20:13:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://example.org/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://example.org/tags/</loc>
   </url>
-  
 </urlset>

@@ -56,7 +56,75 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Tags" />
+</noscript><script>
+
+    
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    
+    var diff_days = ((+now) - (+lun0)) / 1000   / 60   / 60 / 24;
+
+
+    
+    var mean_lunation = 29.530588;
+
+    
+    var diff_lun = diff_days / mean_lunation;
+
+    
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.05;
+        if (cur_lun < buffer) {
+            return "🌑";
+        }
+
+        if (cur_lun < (0.25 - buffer)) {
+            return "🌒";
+        }
+
+        if (cur_lun < (0.25 + buffer)) {
+            return "🌓";
+        }
+
+        if (cur_lun < (0.5 - buffer)) {
+            return "🌔";
+        }
+
+        if (cur_lun < (0.5 + buffer)) {
+            return "🌝";
+        }
+
+        if (cur_lun < (0.75 - buffer)) {
+            return "🌖";
+        }
+
+        if (cur_lun < (0.75 + buffer)) {
+            return "🌗";
+        }
+
+        if (cur_lun < (1 - buffer)) {
+            return "🌘";
+        }
+
+        return "🌑";
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
+</script><meta property="og:title" content="Tags" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://garden.pcarleton.com/tags/" />

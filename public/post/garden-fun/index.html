@@ -8,7 +8,7 @@
 <title>Garden Fun | Paul&#39;s Garden</title>
 <meta name="keywords" content="" />
 <meta name="description" content="A list of fun things I want to play around with on this:
- A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of &ldquo;staleness&rdquo; &ndash; could be an encouragement to write more or an indicator that it&rsquo;s time to delete some things Generally messing with &ldquo;themes&rdquo; to personalize it more (there&rsquo;s 3 different &ldquo;modes&rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  ">
+ A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of &ldquo;staleness&rdquo; &ndash; could be an encouragement to write more or an indicator that it&rsquo;s time to delete some things Generally messing with &ldquo;themes&rdquo; to personalize it more (there&rsquo;s 3 different &ldquo;modes&rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  Emoji favicon https://css-tricks.">
 <meta name="author" content="">
 <link rel="canonical" href="https://garden.pcarleton.com/post/garden-fun/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
@@ -58,9 +58,77 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Garden Fun" />
+</noscript><script>
+
+    
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    
+    var diff_days = ((+now) - (+lun0)) / 1000   / 60   / 60 / 24;
+
+
+    
+    var mean_lunation = 29.530588;
+
+    
+    var diff_lun = diff_days / mean_lunation;
+
+    
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.05;
+        if (cur_lun < buffer) {
+            return "🌑";
+        }
+
+        if (cur_lun < (0.25 - buffer)) {
+            return "🌒";
+        }
+
+        if (cur_lun < (0.25 + buffer)) {
+            return "🌓";
+        }
+
+        if (cur_lun < (0.5 - buffer)) {
+            return "🌔";
+        }
+
+        if (cur_lun < (0.5 + buffer)) {
+            return "🌝";
+        }
+
+        if (cur_lun < (0.75 - buffer)) {
+            return "🌖";
+        }
+
+        if (cur_lun < (0.75 + buffer)) {
+            return "🌗";
+        }
+
+        if (cur_lun < (1 - buffer)) {
+            return "🌘";
+        }
+
+        return "🌑";
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
+</script><meta property="og:title" content="Garden Fun" />
 <meta property="og:description" content="A list of fun things I want to play around with on this:
- A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of &ldquo;staleness&rdquo; &ndash; could be an encouragement to write more or an indicator that it&rsquo;s time to delete some things Generally messing with &ldquo;themes&rdquo; to personalize it more (there&rsquo;s 3 different &ldquo;modes&rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  " />
+ A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of &ldquo;staleness&rdquo; &ndash; could be an encouragement to write more or an indicator that it&rsquo;s time to delete some things Generally messing with &ldquo;themes&rdquo; to personalize it more (there&rsquo;s 3 different &ldquo;modes&rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  Emoji favicon https://css-tricks." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://garden.pcarleton.com/post/garden-fun/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-01-30T10:40:33&#43;00:00" />
@@ -69,7 +137,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Garden Fun"/>
 <meta name="twitter:description" content="A list of fun things I want to play around with on this:
- A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of &ldquo;staleness&rdquo; &ndash; could be an encouragement to write more or an indicator that it&rsquo;s time to delete some things Generally messing with &ldquo;themes&rdquo; to personalize it more (there&rsquo;s 3 different &ldquo;modes&rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  "/>
+ A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of &ldquo;staleness&rdquo; &ndash; could be an encouragement to write more or an indicator that it&rsquo;s time to delete some things Generally messing with &ldquo;themes&rdquo; to personalize it more (there&rsquo;s 3 different &ldquo;modes&rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  Emoji favicon https://css-tricks."/>
 
 
 <script type="application/ld+json">
@@ -98,12 +166,12 @@
   "@type": "BlogPosting",
   "headline": "Garden Fun",
   "name": "Garden Fun",
-  "description": "A list of fun things I want to play around with on this:\n A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of \u0026ldquo;staleness\u0026rdquo; \u0026ndash; could be an encouragement to write more or an indicator that it\u0026rsquo;s time to delete some things Generally messing with \u0026ldquo;themes\u0026rdquo; to personalize it more (there\u0026rsquo;s 3 different \u0026ldquo;modes\u0026rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  ",
+  "description": "A list of fun things I want to play around with on this:\n A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of \u0026ldquo;staleness\u0026rdquo; \u0026ndash; could be an encouragement to write more or an indicator that it\u0026rsquo;s time to delete some things Generally messing with \u0026ldquo;themes\u0026rdquo; to personalize it more (there\u0026rsquo;s 3 different \u0026ldquo;modes\u0026rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  Emoji favicon https://css-tricks.",
   "keywords": [
     
   ],
-  "articleBody": "A list of fun things I want to play around with on this:\n A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of “staleness” – could be an encouragement to write more or an indicator that it’s time to delete some things Generally messing with “themes” to personalize it more (there’s 3 different “modes” of PaperMod) Trying to make the [[post title]] style links from Logseq work here  ",
-  "wordCount" : "94",
+  "articleBody": "A list of fun things I want to play around with on this:\n A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of “staleness” – could be an encouragement to write more or an indicator that it’s time to delete some things Generally messing with “themes” to personalize it more (there’s 3 different “modes” of PaperMod) Trying to make the [[post title]] style links from Logseq work here  Emoji favicon https://css-tricks.com/emoji-as-a-favicon/\nCombined with some code similar to the CLI: https://github.com/pcarleton/moon/blob/master/src/main.rs#L61\nWe get this:\n // 2000/01/06 18:14 UTC, arbitrary new moon starting point var lun0 = new Date(947182440000); var now = new Date(); // diff in days var diff_days = ((+now) - (+lun0)) / 1000 /* ms */ / 60 /* s */ / 60 / 24; // Average time it takes to go from new moon to new moon var mean_lunation = 29.530588; // diff in lunations var diff_lun = diff_days / mean_lunation; // current one is how close we are to the next lunation var cur_lun = diff_lun - Math.floor(diff_lun); function get_char(lun) { var buffer = 0.05; if (cur_lun ' + cur_char + '';  ",
+  "wordCount" : "320",
   "inLanguage": "en",
   "datePublished": "2022-01-30T10:40:33Z",
   "dateModified": "2022-01-30T10:40:33Z",
@@ -186,7 +254,81 @@
 <li>Generally messing with &ldquo;themes&rdquo; to personalize it more (there&rsquo;s 3 different &ldquo;modes&rdquo; of PaperMod)</li>
 <li>Trying to make the [[post title]] style links from Logseq work here</li>
 </ul>
+<h2 id="emoji-favicon">Emoji favicon<a hidden class="anchor" aria-hidden="true" href="#emoji-favicon">#</a></h2>
+<p><a href="https://css-tricks.com/emoji-as-a-favicon/">https://css-tricks.com/emoji-as-a-favicon/</a></p>
+<p>Combined with some code similar to the CLI:
+<a href="https://github.com/pcarleton/moon/blob/master/src/main.rs#L61">https://github.com/pcarleton/moon/blob/master/src/main.rs#L61</a></p>
+<p>We get this:</p>
+<pre tabindex="0"><code>&lt;script&gt;
 
+    // 2000/01/06 18:14 UTC, arbitrary new moon starting point
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    // diff in days
+    var diff_days = ((+now) - (+lun0)) / 1000 /* ms */ / 60 /* s */ / 60 / 24;
+
+
+    // Average time it takes to go from new moon to new moon
+    var mean_lunation = 29.530588;
+
+    // diff in lunations
+    var diff_lun = diff_days / mean_lunation;
+
+    // current one is how close we are to the next lunation
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.05;
+        if (cur_lun &lt; buffer) {
+            return &quot;🌑&quot;;
+        }
+
+        if (cur_lun &lt; (0.25 - buffer)) {
+            return &quot;🌒&quot;;
+        }
+
+        if (cur_lun &lt; (0.25 + buffer)) {
+            return &quot;🌓&quot;;
+        }
+
+        if (cur_lun &lt; (0.5 - buffer)) {
+            return &quot;🌔&quot;;
+        }
+
+        if (cur_lun &lt; (0.5 + buffer)) {
+            return &quot;🌝&quot;;
+        }
+
+        if (cur_lun &lt; (0.75 - buffer)) {
+            return &quot;🌖&quot;;
+        }
+
+        if (cur_lun &lt; (0.75 + buffer)) {
+            return &quot;🌗&quot;;
+        }
+
+        if (cur_lun &lt; (1 - buffer)) {
+            return &quot;🌘&quot;;
+        }
+
+        return &quot;🌑&quot;;
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector(&quot;link[rel~='icon']&quot;);
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2280%22&gt;' + cur_char + '&lt;/text&gt;&lt;/svg&gt;';
+&lt;/script&gt;
+</code></pre>
 
   </div>
 

@@ -56,7 +56,75 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Posts" />
+</noscript><script>
+
+    
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    
+    var diff_days = ((+now) - (+lun0)) / 1000   / 60   / 60 / 24;
+
+
+    
+    var mean_lunation = 29.530588;
+
+    
+    var diff_lun = diff_days / mean_lunation;
+
+    
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.05;
+        if (cur_lun < buffer) {
+            return "🌑";
+        }
+
+        if (cur_lun < (0.25 - buffer)) {
+            return "🌒";
+        }
+
+        if (cur_lun < (0.25 + buffer)) {
+            return "🌓";
+        }
+
+        if (cur_lun < (0.5 - buffer)) {
+            return "🌔";
+        }
+
+        if (cur_lun < (0.5 + buffer)) {
+            return "🌝";
+        }
+
+        if (cur_lun < (0.75 - buffer)) {
+            return "🌖";
+        }
+
+        if (cur_lun < (0.75 + buffer)) {
+            return "🌗";
+        }
+
+        if (cur_lun < (1 - buffer)) {
+            return "🌘";
+        }
+
+        return "🌑";
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
+</script><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://garden.pcarleton.com/post/" />
@@ -132,12 +200,28 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Hugo
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Switching ports fixed a connection problem for some reason…
+  the default one through sudo apt-get install hugo was from 2020, so intalled from source instead.
+  Render: doesn’t seem to be picking up my commits as pulls.
+ Just kidding it worked this time.    All my links are to “example.com” – uhoh. Maybe I need to re-install the theme?
+ Problem was the “baseUrl” in the config....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-01-30 20:13:27 +0000 UTC'>January 30, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to Hugo" href="https://garden.pcarleton.com/post/hugo/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Garden Fun
     </h2>
   </header>
   <section class="entry-content">
     <p>A list of fun things I want to play around with on this:
- A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of “staleness” – could be an encouragement to write more or an indicator that it’s time to delete some things Generally messing with “themes” to personalize it more (there’s 3 different “modes” of PaperMod) Trying to make the [[post title]] style links from Logseq work here  </p>
+ A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of “staleness” – could be an encouragement to write more or an indicator that it’s time to delete some things Generally messing with “themes” to personalize it more (there’s 3 different “modes” of PaperMod) Trying to make the [[post title]] style links from Logseq work here  Emoji favicon https://css-tricks....</p>
   </section>
   <footer class="entry-footer"><span title='2022-01-30 10:40:33 +0000 UTC'>January 30, 2022</span></footer>
   <a class="entry-link" aria-label="post link to Garden Fun" href="https://garden.pcarleton.com/post/garden-fun/"></a>

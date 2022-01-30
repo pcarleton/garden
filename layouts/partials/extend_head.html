@@ -1,28 +1,3 @@
----
-title: "Garden Fun"
-date: 2022-01-30T10:40:33Z
-draft: false
----
-
-A list of fun things I want to play around with on this:
-- A favicon that has the moon but adjusts with the phase
-- Similarly, but on the top of the page
-- Some kind of counter that says how long its been since I posted, maybe some kind of "staleness" -- could be an encouragement to write more or an indicator that it's time to delete some things
-- Generally messing with "themes" to personalize it more (there's 3 different "modes" of PaperMod)
-- Trying to make the [[post title]] style links from Logseq work here
-
-
-
-## Emoji favicon
-
-https://css-tricks.com/emoji-as-a-favicon/
-
-Combined with some code similar to the CLI:
-https://github.com/pcarleton/moon/blob/master/src/main.rs#L61
-
-We get this:
-
-```
 <script>
 
     // 2000/01/06 18:14 UTC, arbitrary new moon starting point
@@ -92,4 +67,3 @@ We get this:
     }
     link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
 </script>
-```

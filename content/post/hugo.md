@@ -14,3 +14,5 @@ draft: false
 
 
 - All my links are to "example.com" -- uhoh. Maybe I need to re-install the theme?
+  - Problem was the "baseUrl" in the config.toml
+  - New issue: clicking name in the top right doesn't change the URL (i.e. doesn't take you "home")

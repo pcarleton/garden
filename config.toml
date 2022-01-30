@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "garden.pcarleton.com"
 languageCode = "en-us"
 title = "Paul's Garden"
 theme = "PaperMod"

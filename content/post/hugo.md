@@ -10,3 +10,7 @@ draft: false
 
 
 - Render: doesn't seem to be picking up my commits as pulls.
+    - Just kidding it worked this time.
+
+
+- All my links are to "example.com" -- uhoh. Maybe I need to re-install the theme?

@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Paul&#39;s Garden</title>
-    <link>http://example.org/</link>
+    <link>/</link>
     <description>Recent content on Paul&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jan 2022 10:40:33 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 10:40:33 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Garden Fun</title>
-      <link>http://example.org/post/garden-fun/</link>
+      <link>/post/garden-fun/</link>
       <pubDate>Sun, 30 Jan 2022 10:40:33 +0000</pubDate>
       
-      <guid>http://example.org/post/garden-fun/</guid>
+      <guid>/post/garden-fun/</guid>
       <description>A list of fun things I want to play around with on this:
  A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of &amp;ldquo;staleness&amp;rdquo; &amp;ndash; could be an encouragement to write more or an indicator that it&amp;rsquo;s time to delete some things Generally messing with &amp;ldquo;themes&amp;rdquo; to personalize it more (there&amp;rsquo;s 3 different &amp;ldquo;modes&amp;rdquo; of PaperMod) Trying to make the [[post title]] style links from Logseq work here  </description>
     </item>
     
     <item>
       <title>Economist odds and aends</title>
-      <link>http://example.org/post/economist/</link>
+      <link>/post/economist/</link>
       <pubDate>Thu, 27 Jan 2022 20:29:41 +0000</pubDate>
       
-      <guid>http://example.org/post/economist/</guid>
+      <guid>/post/economist/</guid>
       <description>I got a subscription to the Economist for Christmas this year (Thanks Taylor!). I&amp;rsquo;ve tried to read the whole thing cover to cover each week, but I&amp;rsquo;ve never been close to being up to speed (Currently a full issue plus some behind). That goal came from this tweet:
 I read @TheEconomist cover-to-cover because its content makes me think critically about the world. Its editors recently asked me a tough question: What is the one thing you&amp;#39;d do to create a more open world?</description>
     </item>
     
     <item>
       <title>Render</title>
-      <link>http://example.org/post/render/</link>
+      <link>/post/render/</link>
       <pubDate>Tue, 25 Jan 2022 20:51:41 +0000</pubDate>
       
-      <guid>http://example.org/post/render/</guid>
+      <guid>/post/render/</guid>
       <description>Render.com Register (with Github) a. (Act on your behalf): looks like it will only be able to do that on resources I grant the app access to New Static Site Push this thing to Github a. looks like it needs to be public, but I guess that&amp;rsquo;s the point anyway i. This got me thinking about how my github might actually get more traffic from people I know versus my blog which is exclusively strangers afaict.</description>
     </item>
     
     <item>
       <title>Garden</title>
-      <link>http://example.org/post/garden/</link>
+      <link>/post/garden/</link>
       <pubDate>Tue, 25 Jan 2022 20:13:27 +0000</pubDate>
       
-      <guid>http://example.org/post/garden/</guid>
+      <guid>/post/garden/</guid>
       <description>Gardening I read a few posts awhile back (I&amp;rsquo;ll link to them at some point, Will Larson) about a digital garden. Something that&amp;rsquo;s a little messy, your little corner of the internet. It&amp;rsquo;s not fully edited, it&amp;rsquo;s not trying to be anything.
 That&amp;rsquo;s something I liked. That it&amp;rsquo;s mostly for me, but I can keep iterating on it.
 https://joelhooks.com/digital-garden

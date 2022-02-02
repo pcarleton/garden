@@ -205,7 +205,7 @@
   </header>
   <section class="entry-content">
     <p>I want to build my site on commit, here’s what I tried first:
-set -eux rm -rf public hugo git add public echo &#34;updated build directory&#34; </p>
+set -eux rm -rf public hugo git add public echo &#34;updated build directory&#34; This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won’t add the pages for it, so it was running the build command but not actually updating anything.</p>
   </section>
   <footer class="entry-footer"><span title='2022-02-01 20:12:42 +0000 UTC'>February 1, 2022</span></footer>
   <a class="entry-link" aria-label="post link to Git pre push" href="https://garden.pcarleton.com/post/pre-push/"></a>

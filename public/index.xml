@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Feb 2022 20:12:42 +0000</lastBuildDate><atom:link href="https://garden.pcarleton.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Git pre push</title>
-      <link>https://garden.pcarleton.com/post/pre-push/</link>
+      <title>Git pre-commit for Hugo</title>
+      <link>https://garden.pcarleton.com/post/hugo-pre-commit/</link>
       <pubDate>Tue, 01 Feb 2022 20:12:42 +0000</pubDate>
       
-      <guid>https://garden.pcarleton.com/post/pre-push/</guid>
+      <guid>https://garden.pcarleton.com/post/hugo-pre-commit/</guid>
       <description>I want to build my site on commit, here&amp;rsquo;s what I tried first:
 set -eux rm -rf public hugo git add public echo &amp;quot;updated build directory&amp;quot; This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won&amp;rsquo;t add the pages for it, so it was running the build command but not actually updating anything.</description>
     </item>

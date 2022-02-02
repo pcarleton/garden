@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Git pre push | Paul&#39;s Garden</title>
+<title>Git pre-commit for Hugo | Paul&#39;s Garden</title>
 <meta name="keywords" content="" />
 <meta name="description" content="I want to build my site on commit, here&rsquo;s what I tried first:
 set -eux rm -rf public hugo git add public echo &quot;updated build directory&quot; This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won&rsquo;t add the pages for it, so it was running the build command but not actually updating anything.">
 <meta name="author" content="">
-<link rel="canonical" href="https://garden.pcarleton.com/post/pre-push/" />
+<link rel="canonical" href="https://garden.pcarleton.com/post/hugo-pre-commit/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -126,16 +126,16 @@ set -eux rm -rf public hugo git add public echo &quot;updated build directory&qu
         document.getElementsByTagName('head')[0].appendChild(link);
     }
     link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
-</script><meta property="og:title" content="Git pre push" />
+</script><meta property="og:title" content="Git pre-commit for Hugo" />
 <meta property="og:description" content="I want to build my site on commit, here&rsquo;s what I tried first:
 set -eux rm -rf public hugo git add public echo &quot;updated build directory&quot; This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won&rsquo;t add the pages for it, so it was running the build command but not actually updating anything." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://garden.pcarleton.com/post/pre-push/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://garden.pcarleton.com/post/hugo-pre-commit/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-02-01T20:12:42&#43;00:00" />
 <meta property="article:modified_time" content="2022-02-01T20:12:42&#43;00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Git pre push"/>
+<meta name="twitter:title" content="Git pre-commit for Hugo"/>
 <meta name="twitter:description" content="I want to build my site on commit, here&rsquo;s what I tried first:
 set -eux rm -rf public hugo git add public echo &quot;updated build directory&quot; This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won&rsquo;t add the pages for it, so it was running the build command but not actually updating anything."/>
 
@@ -154,8 +154,8 @@ set -eux rm -rf public hugo git add public echo &quot;updated build directory&qu
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "Git pre push",
-      "item": "https://garden.pcarleton.com/post/pre-push/"
+      "name": "Git pre-commit for Hugo",
+      "item": "https://garden.pcarleton.com/post/hugo-pre-commit/"
     }
   ]
 }
@@ -164,20 +164,20 @@ set -eux rm -rf public hugo git add public echo &quot;updated build directory&qu
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Git pre push",
-  "name": "Git pre push",
+  "headline": "Git pre-commit for Hugo",
+  "name": "Git pre-commit for Hugo",
   "description": "I want to build my site on commit, here\u0026rsquo;s what I tried first:\nset -eux rm -rf public hugo git add public echo \u0026quot;updated build directory\u0026quot; This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won\u0026rsquo;t add the pages for it, so it was running the build command but not actually updating anything.",
   "keywords": [
     
   ],
-  "articleBody": "I want to build my site on commit, here’s what I tried first:\nset -eux rm -rf public hugo git add public echo \"updated build directory\" This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won’t add the pages for it, so it was running the build command but not actually updating anything.\n",
-  "wordCount" : "70",
+  "articleBody": "I want to build my site on commit, here’s what I tried first:\nset -eux rm -rf public hugo git add public echo \"updated build directory\" This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won’t add the pages for it, so it was running the build command but not actually updating anything.\nI started out googling around for a specific Hugo one, and ended up in a rabbit hole of people setting up servers for ‘post-receive’ hooks and an NPM package for linting called Husky, and a python package for pre-commit modules. What I wanted was much simpler, so it was easier to start from the git docs and mess with the pre-commit.sample and rename to remove .sample.\n",
+  "wordCount" : "136",
   "inLanguage": "en",
   "datePublished": "2022-02-01T20:12:42Z",
   "dateModified": "2022-02-01T20:12:42Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://garden.pcarleton.com/post/pre-push/"
+    "@id": "https://garden.pcarleton.com/post/hugo-pre-commit/"
   },
   "publisher": {
     "@type": "Organization",
@@ -240,7 +240,7 @@ set -eux rm -rf public hugo git add public echo &quot;updated build directory&qu
   <header class="post-header">
     
     <h1 class="post-title">
-      Git pre push
+      Git pre-commit for Hugo
     </h1>
     <div class="post-meta"><span title='2022-02-01 20:12:42 +0000 UTC'>February 1, 2022</span>
 
@@ -254,6 +254,7 @@ hugo
 git add public
 echo &quot;updated build directory&quot;
 </code></pre><p>This worked! But it took some fiddling because I mistakenly set the date of this post in the future.  Apparently you can do that and Hugo won&rsquo;t add the pages for it, so it was running the build command but not actually updating anything.</p>
+<p>I started out googling around for a specific Hugo one, and ended up in a rabbit hole of people <a href="">setting up servers for &lsquo;post-receive&rsquo; hooks</a> and <a href="https://www.danilucaci.com/blog/how-to-lint-and-test-code-using-git-pre-commit-hooks">an NPM package for linting called Husky</a>, and a <a href="https://pre-commit.com/">python package for pre-commit modules</a>.  What I wanted was much simpler, so it was easier to <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">start from the git docs</a> and mess with the <code>pre-commit.sample</code> and rename to remove <code>.sample</code>.</p>
 
 
   </div>

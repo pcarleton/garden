@@ -1,5 +1,5 @@
 ---
-title: "Git pre push"
+title: "Git pre-commit for Hugo"
 date: 2022-02-01T20:12:42Z
 draft: false
 ---

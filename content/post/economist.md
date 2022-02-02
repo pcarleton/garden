@@ -1,5 +1,5 @@
 ---
-title: "Economist odds and aends"
+title: "Economist odds and ends"
 date: 2022-01-27T20:29:41Z
 draft: false
 ---

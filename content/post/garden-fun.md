@@ -44,7 +44,7 @@ We get this:
 
 
     function get_char(lun) {
-        var buffer = 0.05;
+        var buffer = 0.015;
         if (cur_lun < buffer) {
             return "🌑";
         }

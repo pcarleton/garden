@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://garden.pcarleton.com/post/hugo-pre-commit/</loc>
-    <lastmod>2022-02-01T20:12:42+00:00</lastmod>
+    <loc>https://garden.pcarleton.com/post/metrics/</loc>
+    <lastmod>2022-02-03T07:03:03+00:00</lastmod>
   </url><url>
     <loc>https://garden.pcarleton.com/</loc>
-    <lastmod>2022-02-01T20:12:42+00:00</lastmod>
+    <lastmod>2022-02-03T07:03:03+00:00</lastmod>
   </url><url>
     <loc>https://garden.pcarleton.com/post/</loc>
+    <lastmod>2022-02-03T07:03:03+00:00</lastmod>
+  </url><url>
+    <loc>https://garden.pcarleton.com/post/hugo-pre-commit/</loc>
     <lastmod>2022-02-01T20:12:42+00:00</lastmod>
   </url><url>
     <loc>https://garden.pcarleton.com/post/hugo/</loc>

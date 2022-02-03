@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Paul&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Feb 2022 20:12:42 +0000</lastBuildDate><atom:link href="https://garden.pcarleton.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Feb 2022 07:03:03 +0000</lastBuildDate><atom:link href="https://garden.pcarleton.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Metrics</title>
+      <link>https://garden.pcarleton.com/post/metrics/</link>
+      <pubDate>Thu, 03 Feb 2022 07:03:03 +0000</pubDate>
+      
+      <guid>https://garden.pcarleton.com/post/metrics/</guid>
+      <description>I want to get a pageview counter going, but I&amp;rsquo;m kind of into the &amp;ldquo;no Google Analytics trend&amp;rdquo; (fun fact, I used to work on Google Analytics!) I mostly just absolutely hate the &amp;ldquo;Cookie&amp;rdquo; prompt, and while I don&amp;rsquo;t think anybody would come after me for forgetting to put a prompt on, I&amp;rsquo;d like to try getting some metrics where I host it on my own domain.
+One option would be to not get metrics, and just write for the fun of it, not caring if anybody sees it.</description>
+    </item>
+    
     <item>
       <title>Git pre-commit for Hugo</title>
       <link>https://garden.pcarleton.com/post/hugo-pre-commit/</link>

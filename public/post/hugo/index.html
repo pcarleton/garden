@@ -179,8 +179,8 @@
   "keywords": [
     
   ],
-  "articleBody": "  Switching ports fixed a connection problem for some reason…\n  the default one through sudo apt-get install hugo was from 2020, so intalled from source instead.\n  Render: doesn’t seem to be picking up my commits as pulls.\n Just kidding it worked this time.    All my links are to “example.com” – uhoh. Maybe I need to re-install the theme?\n Problem was the “baseUrl” in the config.toml New issue: clicking name in the top right doesn’t change the URL (i.e. doesn’t take you “home”)    ",
-  "wordCount" : "81",
+  "articleBody": "  Switching ports fixed a connection problem for some reason…\n  the default one through sudo apt-get install hugo was from 2020, so intalled from source instead.\n  Render: doesn’t seem to be picking up my commits as pulls.\n Just kidding it worked this time.    All my links are to “example.com” – uhoh. Maybe I need to re-install the theme?\n Problem was the “baseUrl” in the config.toml New issue: clicking name in the top right doesn’t change the URL (i.e. doesn’t take you “home”)    Images I first put things in a folder called “images” that was under ./resources/_gen/images – but that wasn’t right. I then moved it up to ./resources/images and tried doing some things I saw under Image Processing in the docs, like this:\n{{- $image := resources.Get \"images/logo.jpg\" -}} But this just rendered the text itself to the page, not even the path or an error or anything. I then realized the issue was that I was just setting a variable (and maybe not in the right place?)\nIn any event, I ended up using a “page bundle”, so my directory looked like:\ne-notes/ ├── images │ ├── electronic_notes_photo.jpg │ ├── lamy_from_pen.png │ ├── neo_paper_005.jpg │ └── scan_image.pdf └── index.md and then I just used image tags like ![alt text here](/images/lamy_from_pen.png).\n",
+  "wordCount" : "210",
   "inLanguage": "en",
   "datePublished": "2022-01-30T20:13:27Z",
   "dateModified": "2022-01-30T20:13:27Z",
@@ -276,6 +276,19 @@
 </ul>
 </li>
 </ul>
+<h2 id="images">Images<a hidden class="anchor" aria-hidden="true" href="#images">#</a></h2>
+<p>I first put things in a folder called &ldquo;images&rdquo; that was under <code>./resources/_gen/images</code> &ndash; but that wasn&rsquo;t right.  I then moved it up to <code>./resources/images</code> and tried doing some things I saw under <a href="https://gohugo.io/content-management/image-processing/">Image Processing</a> in the docs, like this:</p>
+<pre tabindex="0"><code>{{- $image := resources.Get &quot;images/logo.jpg&quot; -}}
+</code></pre><p>But this just rendered the text itself to the page, not even the path or an error or anything.  I then realized the issue was that I was just setting a variable (and maybe not in the right place?)</p>
+<p>In any event, I ended up using a &ldquo;page bundle&rdquo;, so my directory looked like:</p>
+<pre tabindex="0"><code>e-notes/
+├── images
+│   ├── electronic_notes_photo.jpg
+│   ├── lamy_from_pen.png
+│   ├── neo_paper_005.jpg
+│   └── scan_image.pdf
+└── index.md
+</code></pre><p>and then I just used image tags like <code>![alt text here](/images/lamy_from_pen.png)</code>.</p>
 
 
   </div>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Paul&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Feb 2022 07:03:03 +0000</lastBuildDate><atom:link href="https://garden.pcarleton.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Mar 2022 08:48:18 +0000</lastBuildDate><atom:link href="https://garden.pcarleton.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electronic Notes</title>
+      <link>https://garden.pcarleton.com/post/e-notes/</link>
+      <pubDate>Tue, 08 Mar 2022 08:48:18 +0000</pubDate>
+      
+      <guid>https://garden.pcarleton.com/post/e-notes/</guid>
+      <description>As I was reading a bunch of the Economist (TODO: figure out how to link easily between articles&amp;hellip;), I started keeping notes in logseq (TODO: also link there, I think I wrote something?). And I used some spaced-repitition to remember the facts (inconsistently to be honest, but I got some usage out of it. I can now remember reliably the new prime minister of Bulgaria (although I forgot it when I was chatting about it with a co-worker recently)).</description>
+    </item>
+    
     <item>
       <title>Metrics</title>
       <link>https://garden.pcarleton.com/post/metrics/</link>

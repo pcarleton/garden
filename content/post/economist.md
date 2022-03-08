@@ -19,3 +19,5 @@ I wonder if:
 
 In any event, I plan on timing myself to see how long it takes to read a full issue cover-to-cover.
 
+Update: I did not end up timing myself to read cover to cover, but I also gave up on reading every issue cover-to-cover.  Instead, I've been hopping around to different areas I find interesting, and I've started taken written notes (more on that in a different post.)
+

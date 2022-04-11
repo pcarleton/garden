@@ -6,7 +6,18 @@
     <description>Recent content on Paul&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Mar 2022 08:48:18 +0000</lastBuildDate><atom:link href="https://garden.pcarleton.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Mar 2022 20:33:01 +0000</lastBuildDate><atom:link href="https://garden.pcarleton.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notebook CSS</title>
+      <link>https://garden.pcarleton.com/post/notebook-css/</link>
+      <pubDate>Tue, 08 Mar 2022 20:33:01 +0000</pubDate>
+      
+      <guid>https://garden.pcarleton.com/post/notebook-css/</guid>
+      <description>What if I wanted this page to look like a notebook? Like with the dots like I had in e-notes (TODO make a shortcode for doign this: https://gohugo.io/templates/shortcode-templates/)
+I can do it for sure, I guess the question is whether it actually looks good. One of the issues is that it&amp;rsquo;s not really lined up with the written text.
+ .main { background-image: radial-gradient(#212121 5%, #fdfdfd 6%); background-position: 0 7px; background-size: 15px 15px; height: 10px; width: 100%; }  </description>
+    </item>
+    
     <item>
       <title>Electronic Notes</title>
       <link>https://garden.pcarleton.com/post/e-notes/</link>

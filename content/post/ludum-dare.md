@@ -4,6 +4,10 @@ date: 2022-04-11T07:03:03Z
 draft: false
 ---
 
+{{< rawhtml >}}
+<iframe src="https://www.lexaloffle.com/bbs/widget.php?pid=running_out_of_time" allowfullscreen width="621" height="513" style="border:none; overflow:hidden"></iframe>
+{{</ rawhtml >}}
+
 Two weeks ago was the Game Jam "Ludum Dare".  I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate.  The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc.  You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together.
 
 The game I submitted was very much not polished, but was a fun concept.  The theme was "delaying the inevitable".  I had been kicking around some ideas about orbital mechanics as part of a Kerbal Space Program binge (more on that in another post), and I thought it would be fun to have an element of needing to work with Gravity to avoid some inevitable situation.

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ludum Dare | Paul&#39;s Garden</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Two weeks ago was the Game Jam &ldquo;Ludum Dare&rdquo;. I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate. The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc. You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together.">
+<meta name="author" content="">
+<link rel="canonical" href="https://garden.pcarleton.com/post/ludum-dare/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://garden.pcarleton.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://garden.pcarleton.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://garden.pcarleton.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://garden.pcarleton.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://garden.pcarleton.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.93.0-DEV" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+
+    
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    
+    var diff_days = ((+now) - (+lun0)) / 1000   / 60   / 60 / 24;
+
+
+    
+    var mean_lunation = 29.530588;
+
+    
+    var diff_lun = diff_days / mean_lunation;
+
+    
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.015;
+        if (cur_lun < buffer) {
+            return "🌑";
+        }
+
+        if (cur_lun < (0.25 - buffer)) {
+            return "🌒";
+        }
+
+        if (cur_lun < (0.25 + buffer)) {
+            return "🌓";
+        }
+
+        if (cur_lun < (0.5 - buffer)) {
+            return "🌔";
+        }
+
+        if (cur_lun < (0.5 + buffer)) {
+            return "🌝";
+        }
+
+        if (cur_lun < (0.75 - buffer)) {
+            return "🌖";
+        }
+
+        if (cur_lun < (0.75 + buffer)) {
+            return "🌗";
+        }
+
+        if (cur_lun < (1 - buffer)) {
+            return "🌘";
+        }
+
+        return "🌑";
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
+</script><meta property="og:title" content="Ludum Dare" />
+<meta property="og:description" content="Two weeks ago was the Game Jam &ldquo;Ludum Dare&rdquo;. I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate. The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc. You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garden.pcarleton.com/post/ludum-dare/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-11T07:03:03&#43;00:00" />
+<meta property="article:modified_time" content="2022-04-11T07:03:03&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ludum Dare"/>
+<meta name="twitter:description" content="Two weeks ago was the Game Jam &ldquo;Ludum Dare&rdquo;. I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate. The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc. You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://garden.pcarleton.com/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Ludum Dare",
+      "item": "https://garden.pcarleton.com/post/ludum-dare/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ludum Dare",
+  "name": "Ludum Dare",
+  "description": "Two weeks ago was the Game Jam \u0026ldquo;Ludum Dare\u0026rdquo;. I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate. The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc. You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Two weeks ago was the Game Jam “Ludum Dare”. I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate. The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc. You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together.\nThe game I submitted was very much not polished, but was a fun concept. The theme was “delaying the inevitable”. I had been kicking around some ideas about orbital mechanics as part of a Kerbal Space Program binge (more on that in another post), and I thought it would be fun to have an element of needing to work with Gravity to avoid some inevitable situation.\nMy first thought was that the sun has gone supernova, and you need to flee the solar system, however, you can never really go fast enough, so eventually it catches up and kills you. Another idea was something about a black hole, where you’ve crossed the event horizon, so you’re definitely going in, but you’ve got some ability to delay your demise.\nI started with the supernova idea, and thought about a few stages. You’d have to go from a low-earth orbit, and transfer to Mars first. I hadn’t really dug into interplanetary transfers yet, and I was actually thinking somehow working out a slingshot via the moon would be really cool and hopefully challenging. However, it turns out that you don’t actually save that much on the way to Mars by leveraging the moon. I thought of a way around that which was to put some more fuel orbiting the moon that you could pick up which would incentivize making a stop over / slingshot past it.\nWith all of that “settled”, I got to coding the game. I wanted to get basic gravity around the earth working first, and figured maybe grabbing a fuel tank would be a good “warm-up” before the whole moon situation. I quickly realized a few things. First, there wasn’t that much room on the screen. If I also wanted to have the moon on there, I was going to either have to scroll / zoom a lot, or have a tiny ship. Second, I realized that in order to do complex orbital maneuvers, I was really going to need some kind of planning interface. I had learned from my “Hohmann transfer” notebook, that applying “delta v” was actually pretty straightforward as long as I didn’t worry too much about the actual rocket mechanics (i.e. I just increase/decrease velocity, I don’t contemplate the mass of the fuel or rocket etc.). However, I also learned that it’s very finicky to execute a precise manuever. The example in that notebook is a simple transfer and re-circulazation, and I needed super precise burns at super precise locations to get a perfect circle.\nThat meant that if I wanted to have “perfect” burns, I was going to have to do a lot of guiding / restricting to help the player get it right. There was pretty much no way they’d be able to nail it with just timing a thrust button. I could do something like indicate a “thrust” button only triggers at your next apo or periapsis, and then have a “mario golf” like bouncing meter to determine the amount of thrust, but that would require a lot of “training” of the player to know what I was even talking about and why, and still the thrust selection would leave a lot of room for error.\nI figured that an interplanetary transfer would require some pretty precise burns. It’s possible I could simplify it, but I wasn’t confident I could make that experience fun. Meanwhile, I had a ship orbiting a planet, and the ability to change its orbit, so I hooked up delta-v to the buttons and decided to see how it went.\nIt was pretty fun to try to do a Hohmann transfer with just timing the buttons, so I figured I’d try to add a mechanic around that. I had been thinking a sort of “interplanetary drivers ed” mechanic where parking in a new, higher circular orbit could be interesting, kind of like a parallel parking test. There would be some “green circle” parking area that if you stayed in for a full orbit would count as passing.\nThat didn’t really hit the theme though, which led me to think about running out of air, and trying to grab some oxygen tanks. (I had thought about this as part of the initial challenge to go to the moon, so my sequence might be a little off here.) I put in the oxygen tank and found it was actually pretty hard to get it. I hadn’t been considering the different speeds. In my head, if you did a transfer to the same circular orbit, you’d grab it, but that’s not true at all, and getting to the same orbit is not a great strategy for a rendezvous. Being on the same orbit only works if you’re also at the same angle around that orbit, and if you’re not, you’ll never catch up. Instead, it’s all about (1) making your orbits intersect AND (2) having both objects hit the intersection point at the same time.\nRealizing that was kind of fun, and made me realize that it was simple enough to figure out while hitting the buttons, but also pretty challenging. It also told me that anything more involved would be challenging. And I didn’t have much more time. So I went with it!\nThe game turned out pretty fun, but was super unpolished. After some pointers (TODO add YT links) from Shawn, I spent a few hours over the next week adding some “juice” to it:\n small screen shake when you hit the thrust particles when you thrust animated sprites for the character (now an astronaut), o2 tank, and earth sound effects drumbeat background noise an intro screen smaller status bars background stars easter egg exploding earth  Adding these was very fun and really changed the overall feel of the game. I did introduce a few bugs, like your score goes up while you’re waiting on the start screen, and the exploding earth is less of an easter egg since it’s hit box is a little large. I was happy with the overall result, and made me excited for next time when hopefully I’ll have time to add polish to the game I actually submit.\nOther topics to touch on:\n pico-8  sprite editor is like a built-in timecap on how much time to spend on that piece  movement / animation of the sprite makes up for an unrecognizable initial sprite   sound being intimidating at first, but like sprites, delightfully constrained forces you to think about precision early (due to integer overflow) publishing is super easy, very difficult to break, and works really well on mobile    ",
+  "wordCount" : "1191",
+  "inLanguage": "en",
+  "datePublished": "2022-04-11T07:03:03Z",
+  "dateModified": "2022-04-11T07:03:03Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://garden.pcarleton.com/post/ludum-dare/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paul's Garden",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://garden.pcarleton.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://garden.pcarleton.com" accesskey="h" title="Paul&#39;s Garden (Alt + H)">Paul&#39;s Garden</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Ludum Dare
+    </h1>
+    <div class="post-meta"><span title='2022-04-11 07:03:03 +0000 UTC'>April 11, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Two weeks ago was the Game Jam &ldquo;Ludum Dare&rdquo;.  I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate.  The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc.  You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together.</p>
+<p>The game I submitted was very much not polished, but was a fun concept.  The theme was &ldquo;delaying the inevitable&rdquo;.  I had been kicking around some ideas about orbital mechanics as part of a Kerbal Space Program binge (more on that in another post), and I thought it would be fun to have an element of needing to work with Gravity to avoid some inevitable situation.</p>
+<p>My first thought was that the sun has gone supernova, and you need to flee the solar system, however, you can never really go fast enough, so eventually it catches up and kills you.  Another idea was something about a black hole, where you&rsquo;ve crossed the event horizon, so you&rsquo;re definitely going in, but you&rsquo;ve got some ability to delay your demise.</p>
+<p>I started with the supernova idea, and thought about a few stages.  You&rsquo;d have to go from a low-earth orbit, and transfer to Mars first.  I hadn&rsquo;t really dug into interplanetary transfers yet, and I was actually thinking somehow working out a slingshot via the moon would be really cool and hopefully challenging.  However, <a href="https://space.stackexchange.com/questions/14768/multiple-gravity-assist-from-moon-to-reach-mars">it turns out that you don&rsquo;t actually save that much on the way to Mars by leveraging the moon</a>.  I thought of a way around that which was to put some more fuel orbiting the moon that you could pick up which would incentivize making a stop over / slingshot past it.</p>
+<p>With all of that &ldquo;settled&rdquo;, I got to coding the game.  I wanted to get basic gravity around the earth working first, and figured maybe grabbing a fuel tank would be a good &ldquo;warm-up&rdquo; before the whole moon situation.  I quickly realized a few things.  First, there wasn&rsquo;t that much room on the screen.  If I also wanted to have the moon on there, I was going to either have to scroll / zoom a lot, or have a tiny ship.  Second, I realized that in order to do complex orbital maneuvers, I was really going to need some kind of planning interface.  I had learned from my &ldquo;Hohmann transfer&rdquo; notebook, that applying &ldquo;delta v&rdquo; was actually pretty straightforward as long as I didn&rsquo;t worry too much about the actual rocket mechanics (i.e. I just increase/decrease velocity, I don&rsquo;t contemplate the mass of the fuel or rocket etc.).  However, I also learned that it&rsquo;s very finicky to execute a precise manuever.  The example in that notebook is a simple transfer and re-circulazation, and I needed super precise burns at super precise locations to get a perfect circle.</p>
+<p>That meant that if I wanted to have &ldquo;perfect&rdquo; burns, I was going to have to do a lot of guiding / restricting to help the player get it right.  There was pretty much no way they&rsquo;d be able to nail it with just timing a thrust button.  I could do something like indicate a &ldquo;thrust&rdquo; button only triggers at your next apo or periapsis, and then have a &ldquo;mario golf&rdquo; like bouncing meter to determine the amount of thrust, but that would require a lot of &ldquo;training&rdquo; of the player to know what I was even talking about and why, and still the thrust selection would leave a lot of room for error.</p>
+<p>I figured that an interplanetary transfer would require some pretty precise burns.  It&rsquo;s possible I could simplify it, but I wasn&rsquo;t confident I could make that experience fun.  Meanwhile, I had a ship orbiting a planet, and the ability to change its orbit, so I hooked up delta-v to the buttons and decided to see how it went.</p>
+<p>It was pretty fun to try to do a Hohmann transfer with just timing the buttons, so I figured I&rsquo;d try to add a mechanic around that.  I had been thinking a sort of &ldquo;interplanetary drivers ed&rdquo; mechanic where parking in a new, higher circular orbit could be interesting, kind of like a parallel parking test.  There would be some &ldquo;green circle&rdquo; parking area that if you stayed in for a full orbit would count as passing.</p>
+<p>That didn&rsquo;t really hit the theme though, which led me to think about running out of air, and trying to grab some oxygen tanks.  (I had thought about this as part of the initial challenge to go to the moon, so my sequence might be a little off here.)  I put in the oxygen tank and found it was actually pretty hard to get it.  I hadn&rsquo;t been considering the different speeds. In my head, if you did a transfer to the same circular orbit, you&rsquo;d grab it, but that&rsquo;s not true at all, and getting to the same orbit is not a great strategy for a rendezvous.  Being on the same orbit only works if you&rsquo;re also at the same angle around that orbit, and if you&rsquo;re not, you&rsquo;ll never catch up.  Instead, it&rsquo;s all about (1) making your orbits intersect AND (2) having both objects hit the intersection point at the same time.</p>
+<p>Realizing that was kind of fun, and made me realize that it was simple enough to figure out while hitting the buttons, but also pretty challenging.  It also told me that anything more involved would be challenging.  And I didn&rsquo;t have much more time.  So I went with it!</p>
+<p>The game turned out pretty fun, but was super unpolished.  After some pointers (TODO add YT links) from Shawn, I spent a few hours over the next week adding some &ldquo;juice&rdquo; to it:</p>
+<ul>
+<li>small screen shake when you hit the thrust</li>
+<li>particles when you thrust</li>
+<li>animated sprites for the character (now an astronaut), o2 tank, and earth</li>
+<li>sound effects</li>
+<li>drumbeat background noise</li>
+<li>an intro screen</li>
+<li>smaller status bars</li>
+<li>background stars</li>
+<li>easter egg exploding earth</li>
+</ul>
+<p>Adding these was very fun and really changed the overall feel of the game.  I did introduce a few bugs, like your score goes up while you&rsquo;re waiting on the start screen, and the exploding earth is less of an easter egg since it&rsquo;s hit box is a little large.  I was happy with the overall result, and made me excited for next time when hopefully I&rsquo;ll have time to add polish to the game I actually submit.</p>
+<p>Other topics to touch on:</p>
+<ul>
+<li>pico-8
+<ul>
+<li>sprite editor is like a built-in timecap on how much time to spend on that piece
+<ul>
+<li>movement / animation of the sprite makes up for an unrecognizable initial sprite</li>
+</ul>
+</li>
+<li>sound being intimidating at first, but like sprites, delightfully constrained</li>
+<li>forces you to think about precision early (due to integer overflow)</li>
+<li>publishing is super easy, very difficult to break, and works really well on mobile</li>
+</ul>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://garden.pcarleton.com">Paul&#39;s Garden</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

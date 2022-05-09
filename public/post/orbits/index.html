@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Orbits | Paul&#39;s Garden</title>
+<meta name="keywords" content="" />
+<meta name="description" content="I have a bizarre way of playing Kerbal Space Program. I&rsquo;ve done it at least three times. I go to a YouTube series by CheersKevin called &ldquo;Kerbal Space Programming&rdquo;. I watch the episodes, and play along. I get to about episode #3 or #4, and somewhere along the way, I get deep into a rabbit hole with the math and optimization available. I don&rsquo;t think I&rsquo;ve ever made it to the episode where he lands on the &ldquo;Mun&rdquo; (the Moon equivalent of KSP).">
+<meta name="author" content="">
+<link rel="canonical" href="https://garden.pcarleton.com/post/orbits/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://garden.pcarleton.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://garden.pcarleton.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://garden.pcarleton.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://garden.pcarleton.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://garden.pcarleton.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.93.0-DEV" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+
+    
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    
+    var diff_days = ((+now) - (+lun0)) / 1000   / 60   / 60 / 24;
+
+
+    
+    var mean_lunation = 29.530588;
+
+    
+    var diff_lun = diff_days / mean_lunation;
+
+    
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.015;
+        if (cur_lun < buffer) {
+            return "🌑";
+        }
+
+        if (cur_lun < (0.25 - buffer)) {
+            return "🌒";
+        }
+
+        if (cur_lun < (0.25 + buffer)) {
+            return "🌓";
+        }
+
+        if (cur_lun < (0.5 - buffer)) {
+            return "🌔";
+        }
+
+        if (cur_lun < (0.5 + buffer)) {
+            return "🌝";
+        }
+
+        if (cur_lun < (0.75 - buffer)) {
+            return "🌖";
+        }
+
+        if (cur_lun < (0.75 + buffer)) {
+            return "🌗";
+        }
+
+        if (cur_lun < (1 - buffer)) {
+            return "🌘";
+        }
+
+        return "🌑";
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
+</script><meta property="og:title" content="Orbits" />
+<meta property="og:description" content="I have a bizarre way of playing Kerbal Space Program. I&rsquo;ve done it at least three times. I go to a YouTube series by CheersKevin called &ldquo;Kerbal Space Programming&rdquo;. I watch the episodes, and play along. I get to about episode #3 or #4, and somewhere along the way, I get deep into a rabbit hole with the math and optimization available. I don&rsquo;t think I&rsquo;ve ever made it to the episode where he lands on the &ldquo;Mun&rdquo; (the Moon equivalent of KSP)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garden.pcarleton.com/post/orbits/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-09T06:40:26&#43;01:00" />
+<meta property="article:modified_time" content="2022-05-09T06:40:26&#43;01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Orbits"/>
+<meta name="twitter:description" content="I have a bizarre way of playing Kerbal Space Program. I&rsquo;ve done it at least three times. I go to a YouTube series by CheersKevin called &ldquo;Kerbal Space Programming&rdquo;. I watch the episodes, and play along. I get to about episode #3 or #4, and somewhere along the way, I get deep into a rabbit hole with the math and optimization available. I don&rsquo;t think I&rsquo;ve ever made it to the episode where he lands on the &ldquo;Mun&rdquo; (the Moon equivalent of KSP)."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://garden.pcarleton.com/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Orbits",
+      "item": "https://garden.pcarleton.com/post/orbits/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Orbits",
+  "name": "Orbits",
+  "description": "I have a bizarre way of playing Kerbal Space Program. I\u0026rsquo;ve done it at least three times. I go to a YouTube series by CheersKevin called \u0026ldquo;Kerbal Space Programming\u0026rdquo;. I watch the episodes, and play along. I get to about episode #3 or #4, and somewhere along the way, I get deep into a rabbit hole with the math and optimization available. I don\u0026rsquo;t think I\u0026rsquo;ve ever made it to the episode where he lands on the \u0026ldquo;Mun\u0026rdquo; (the Moon equivalent of KSP).",
+  "keywords": [
+    
+  ],
+  "articleBody": "I have a bizarre way of playing Kerbal Space Program. I’ve done it at least three times. I go to a YouTube series by CheersKevin called “Kerbal Space Programming”. I watch the episodes, and play along. I get to about episode #3 or #4, and somewhere along the way, I get deep into a rabbit hole with the math and optimization available. I don’t think I’ve ever made it to the episode where he lands on the “Mun” (the Moon equivalent of KSP). There are 45 episodes. 45!\nPreviously my rabbit holes have been around PID controllers and hovering, and collecting data out of KSP. It lets you publish data over telnet, so I spend some time setting up a listener and building some graphs (unfortunately lost to the sands of time, so I can’t even tell how far I made it down that rabbit hole).\nMy latest rabbit hole began even before I launched Kerbal Space Program. I talked to a co-worker about KSP, which got me thinking about orbital dynamics. I have been interested in Lagrange points since they seem kind of like magic, and also wanted to understand the “Interplanetary Transport Network”.\n  From wikipedia: Artist's concept of the Interplanetary Transport Network. The green ribbon represents one possible path from among the infinite number possible within the larger bounding tube. Constricted areas represent locations of Lagrange points.   With those ideas in mind, I started trying to simulate gravity using Observable Notebooks, starting with learning about Runge-Kutta methods of numerical analysis after seeing another author’s n-body simulation.\nI learned a lot about this, and even ended up making a Pico-8 game based on some of what I learned (that one was mostly based on how tricky it was to manually make a Hohmann transfer orbit). After making and then polishing that game, I also wanted to see what an “ideal” transfer looked like, so I made Hohmann Transfer Rendezvous.\nAlong the way, I was thinking through what I wanted to do with these simulations since I figured sharing them would be fun, and I stumbled across a few substacks (after googling “orbital mechanics substack”). One was by a name I recognized, and was thinking along similar lines about creating tools for learning complex physics. I joined their Discord, polished a demo on the Vis-viva equation, and convinced myself that finding an audience for the tools I was building was a good next step.\nI did eventually launch KSP, and I’ll talk more about my audience in a standalone “PR strategy” post.\n",
+  "wordCount" : "422",
+  "inLanguage": "en",
+  "datePublished": "2022-05-09T06:40:26+01:00",
+  "dateModified": "2022-05-09T06:40:26+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://garden.pcarleton.com/post/orbits/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paul's Garden",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://garden.pcarleton.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://garden.pcarleton.com" accesskey="h" title="Paul&#39;s Garden (Alt + H)">Paul&#39;s Garden</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Orbits
+    </h1>
+    <div class="post-meta"><span title='2022-05-09 06:40:26 +0100 BST'>May 9, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>I have a bizarre way of playing Kerbal Space Program.  I&rsquo;ve done it at least three times.  I go to a YouTube series by CheersKevin called <a href="https://www.youtube.com/watch?v=fNlAME5eU3o">&ldquo;Kerbal Space Programming&rdquo;</a>.  I watch the episodes, and play along.  I get to about episode #3 or #4, and somewhere along the way, I get deep into a rabbit hole with the math and optimization available.  I don&rsquo;t think I&rsquo;ve ever made it to the episode where he lands on the &ldquo;Mun&rdquo; (the Moon equivalent of KSP).  There are 45 episodes. <a href="https://www.youtube.com/playlist?list=PLb6UbFXBdbCrvdXVgY_3jp5swtvW24fYv">45!</a></p>
+<p>Previously my rabbit holes have been around PID controllers and hovering, and collecting data out of KSP.  It lets you publish data over telnet, so I spend some time setting up a listener and building some graphs (unfortunately lost to the sands of time, so I can&rsquo;t even tell how far I made it down that rabbit hole).</p>
+<p>My latest rabbit hole began even before I launched Kerbal Space Program. I talked to a co-worker about KSP, which got me thinking about orbital dynamics.  I have been interested in <a href="https://en.wikipedia.org/wiki/Lagrange_point">Lagrange points</a> since they seem kind of like magic, and also wanted to understand the <a href="https://en.wikipedia.org/wiki/Interplanetary_Transport_Network">&ldquo;Interplanetary Transport Network&rdquo;</a>.</p>
+<figure>
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Interplanetary_Superhighway.jpg" width="80%"/> <figcaption>
+            From wikipedia: Artist&#39;s concept of the Interplanetary Transport Network. The green ribbon represents one possible path from among the infinite number possible within the larger bounding tube. Constricted areas represent locations of Lagrange points.
+        </figcaption>
+</figure>
+
+<p>With those ideas in mind, I started trying to simulate gravity using <a href="https://observablehq.com/@pcarleton/runge-kutta-visualized?collection=@pcarleton/interplanetary-drivers-ed">Observable Notebooks</a>, starting with learning about <a href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta methods</a> of numerical analysis after seeing another author&rsquo;s <a href="https://observablehq.com/@mcmcclur/gravitation-and-the-n-body-problem">n-body simulation</a>.</p>
+<p>I learned a lot about this, and even ended up making <a href="/post/ludum-dare/">a Pico-8 game</a> based on some of what I learned (that one was mostly based on how tricky it was to manually make a <a href="https://observablehq.com/@pcarleton/hohmann-transfer-orbit?collection=@pcarleton/interplanetary-drivers-ed">Hohmann transfer orbit</a>).  After making and then polishing that game, I also wanted to see what an &ldquo;ideal&rdquo; transfer looked like, so I made <a href="https://observablehq.com/@pcarleton/hohmann-transfer-rendezvous?collection=@pcarleton/interplanetary-drivers-ed">Hohmann Transfer Rendezvous</a>.</p>
+<p>Along the way, I was thinking through what I wanted to do with these simulations since I figured sharing them would be fun, and I stumbled across <a href="https://itsnotrocketscience.substack.com/p/how-do-tides-work?s=r">a few substacks</a> (after googling &ldquo;orbital mechanics substack&rdquo;). One was by a name I recognized, and was thinking along similar lines <a href="https://roadtoreality.substack.com/p/the-dynamic-notebook?s=r">about creating tools for learning complex physics</a>.  I joined <a href="https://discord.gg/7MgKgc6">their Discord</a>, polished a demo on the <a href="https://observablehq.com/@pcarleton/the-vis-viva-equation?collection=@pcarleton/interplanetary-drivers-ed">Vis-viva equation</a>, and convinced myself that finding an audience for the tools I was building was a good next step.</p>
+<p>I did eventually launch KSP, and I&rsquo;ll talk more about my audience in a standalone &ldquo;PR strategy&rdquo; post.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://garden.pcarleton.com">Paul&#39;s Garden</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -193,138 +193,25 @@
 </header>
 <main class="main"> 
 
-<article class="first-entry"> 
-  <header class="entry-header">
-    <h2>Orbits
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>I have a bizarre way of playing Kerbal Space Program. I’ve done it at least three times. I go to a YouTube series by CheersKevin called “Kerbal Space Programming”. I watch the episodes, and play along. I get to about episode #3 or #4, and somewhere along the way, I get deep into a rabbit hole with the math and optimization available. I don’t think I’ve ever made it to the episode where he lands on the “Mun” (the Moon equivalent of KSP)....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-05-09 06:40:26 +0100 BST'>May 9, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Orbits" href="https://garden.pcarleton.com/post/orbits/"></a>
-</article>
-
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Ludum Dare
+    <h2>Garden
     </h2>
   </header>
   <section class="entry-content">
-    <p>Two weeks ago was the Game Jam “Ludum Dare”. I had heard about it for a few years running (this was the 50th instance of it), but had never gotten my act together to actually participate. The gist is a 48 hour period where you create a game from start to finish: all graphics, concepts, code, music etc. You can be pretty intense about it and not sleep a lot, or you can be like me and forget about it until partway through Saturday, then spend a couple hours on Sunday hurriedly throwing something together....</p>
+    <p>Gardening I read a few posts awhile back (I’ll link to them at some point, Will Larson) about a digital garden. Something that’s a little messy, your little corner of the internet. It’s not fully edited, it’s not trying to be anything.
+That’s something I liked. That it’s mostly for me, but I can keep iterating on it.
+https://joelhooks.com/digital-garden
+https://lethain.com/exuberant-sketches/
+https://tomcritchlow.com/2019/02/17/building-digital-garden/
+Nesting One of the things I found compelling this week was building a floorplan of the apartment I’m renting with my partner....</p>
   </section>
-  <footer class="entry-footer"><span title='2022-04-11 07:03:03 +0000 UTC'>April 11, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Ludum Dare" href="https://garden.pcarleton.com/post/ludum-dare/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Notebook CSS
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>What if I wanted this page to look like a notebook? Like with the dots like I had in e-notes (TODO make a shortcode for doign this: https://gohugo.io/templates/shortcode-templates/)
-I can do it for sure, I guess the question is whether it actually looks good. One of the issues is that it’s not really lined up with the written text.
- .main { background-image: radial-gradient(#212121 5%, #fdfdfd 6%); background-position: 0 7px; background-size: 15px 15px; height: 10px; width: 100%; }  </p>
-  </section>
-  <footer class="entry-footer"><span title='2022-03-08 20:33:01 +0000 UTC'>March 8, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Notebook CSS" href="https://garden.pcarleton.com/post/notebook-css/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Electronic Notes
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>As I was reading a bunch of the Economist (TODO: figure out how to link easily between articles…), I started keeping notes in logseq (TODO: also link there, I think I wrote something?). And I used some spaced-repitition to remember the facts (inconsistently to be honest, but I got some usage out of it. I can now remember reliably the new prime minister of Bulgaria (although I forgot it when I was chatting about it with a co-worker recently))....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-03-08 08:48:18 +0000 UTC'>March 8, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Electronic Notes" href="https://garden.pcarleton.com/post/e-notes/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Metrics
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>I want to get a pageview counter going, but I’m kind of into the “no Google Analytics trend” (fun fact, I used to work on Google Analytics!) I mostly just absolutely hate the “Cookie” prompt, and while I don’t think anybody would come after me for forgetting to put a prompt on, I’d like to try getting some metrics where I host it on my own domain.
-One option would be to not get metrics, and just write for the fun of it, not caring if anybody sees it....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-02-03 07:03:03 +0000 UTC'>February 3, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Metrics" href="https://garden.pcarleton.com/post/metrics/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Git pre-commit for Hugo
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>I want to build my site on commit, here’s what I tried first:
-set -eux rm -rf public hugo git add public echo &#34;updated build directory&#34; This worked! But it took some fiddling because I mistakenly set the date of this post in the future. Apparently you can do that and Hugo won’t add the pages for it, so it was running the build command but not actually updating anything....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-02-01 20:12:42 +0000 UTC'>February 1, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Git pre-commit for Hugo" href="https://garden.pcarleton.com/post/hugo-pre-commit/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Hugo
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Switching ports fixed a connection problem for some reason…
-  the default one through sudo apt-get install hugo was from 2020, so intalled from source instead.
-  Render: doesn’t seem to be picking up my commits as pulls.
- Just kidding it worked this time.    All my links are to “example.com” – uhoh. Maybe I need to re-install the theme?
- Problem was the “baseUrl” in the config....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 20:13:27 +0000 UTC'>January 30, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Hugo" href="https://garden.pcarleton.com/post/hugo/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Garden Fun
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>A list of fun things I want to play around with on this:
- A favicon that has the moon but adjusts with the phase Similarly, but on the top of the page Some kind of counter that says how long its been since I posted, maybe some kind of “staleness” – could be an encouragement to write more or an indicator that it’s time to delete some things Generally messing with “themes” to personalize it more (there’s 3 different “modes” of PaperMod) Trying to make the [[post title]] style links from Logseq work here  Emoji favicon https://css-tricks....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 10:40:33 +0000 UTC'>January 30, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Garden Fun" href="https://garden.pcarleton.com/post/garden-fun/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Economist odds and ends
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>I got a subscription to the Economist for Christmas this year (Thanks Taylor!). I’ve tried to read the whole thing cover to cover each week, but I’ve never been close to being up to speed (Currently a full issue plus some behind). That goal came from this tweet:
-I read @TheEconomist cover-to-cover because its content makes me think critically about the world. Its editors recently asked me a tough question: What is the one thing you&#39;d do to create a more open world?...</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-27 20:29:41 +0000 UTC'>January 27, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Economist odds and ends" href="https://garden.pcarleton.com/post/economist/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Render
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Render.com Register (with Github) a. (Act on your behalf): looks like it will only be able to do that on resources I grant the app access to New Static Site Push this thing to Github a. looks like it needs to be public, but I guess that’s the point anyway i. This got me thinking about how my github might actually get more traffic from people I know versus my blog which is exclusively strangers afaict....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-25 20:51:41 +0000 UTC'>January 25, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Render" href="https://garden.pcarleton.com/post/render/"></a>
+  <footer class="entry-footer"><span title='2022-01-25 20:13:27 +0000 UTC'>January 25, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to Garden" href="https://garden.pcarleton.com/post/garden/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="next" href="https://garden.pcarleton.com/page/2/">Next Page »</a>
+    <a class="prev" href="https://garden.pcarleton.com/">« Prev Page</a>
   </nav>
 </footer>
     </main>

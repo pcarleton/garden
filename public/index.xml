@@ -6,7 +6,26 @@
     <description>Recent content on Paul&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 May 2022 06:40:26 +0100</lastBuildDate><atom:link href="https://garden.pcarleton.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 May 2022 06:46:22 +0100</lastBuildDate><atom:link href="https://garden.pcarleton.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Books</title>
+      <link>https://garden.pcarleton.com/post/books/</link>
+      <pubDate>Tue, 10 May 2022 06:46:22 +0100</pubDate>
+      
+      <guid>https://garden.pcarleton.com/post/books/</guid>
+      <description>TODO: https://petargyurov.com/bookshelf/</description>
+    </item>
+    
+    <item>
+      <title>PR Strategy</title>
+      <link>https://garden.pcarleton.com/post/pr-strategy/</link>
+      <pubDate>Tue, 10 May 2022 06:21:22 +0100</pubDate>
+      
+      <guid>https://garden.pcarleton.com/post/pr-strategy/</guid>
+      <description>I left off in orbits after finding the &amp;ldquo;Mentat Collective&amp;rdquo; discord, which I would describe as a group of people working on tools for exploring physics and math. I shared some of what I had been doing, especially around visualization with d3-contours since they were chatting about potential demo&amp;rsquo;s of their tools.
+This got me thinking of a conversation I had with a co-worker awhile ago. She told a story about how she was unhappy with her current job, and then went to the Recurse Center with the goal of getting a new, better job afterwards.</description>
+    </item>
+    
     <item>
       <title>Orbits</title>
       <link>https://garden.pcarleton.com/post/orbits/</link>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>PR Strategy | Paul&#39;s Garden</title>
+<meta name="keywords" content="" />
+<meta name="description" content="I left off in orbits after finding the &ldquo;Mentat Collective&rdquo; discord, which I would describe as a group of people working on tools for exploring physics and math. I shared some of what I had been doing, especially around visualization with d3-contours since they were chatting about potential demo&rsquo;s of their tools.
+This got me thinking of a conversation I had with a co-worker awhile ago. She told a story about how she was unhappy with her current job, and then went to the Recurse Center with the goal of getting a new, better job afterwards.">
+<meta name="author" content="">
+<link rel="canonical" href="https://garden.pcarleton.com/post/pr-strategy/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://garden.pcarleton.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://garden.pcarleton.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://garden.pcarleton.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://garden.pcarleton.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://garden.pcarleton.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.93.0-DEV" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+
+    
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    
+    var diff_days = ((+now) - (+lun0)) / 1000   / 60   / 60 / 24;
+
+
+    
+    var mean_lunation = 29.530588;
+
+    
+    var diff_lun = diff_days / mean_lunation;
+
+    
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.015;
+        if (cur_lun < buffer) {
+            return "🌑";
+        }
+
+        if (cur_lun < (0.25 - buffer)) {
+            return "🌒";
+        }
+
+        if (cur_lun < (0.25 + buffer)) {
+            return "🌓";
+        }
+
+        if (cur_lun < (0.5 - buffer)) {
+            return "🌔";
+        }
+
+        if (cur_lun < (0.5 + buffer)) {
+            return "🌝";
+        }
+
+        if (cur_lun < (0.75 - buffer)) {
+            return "🌖";
+        }
+
+        if (cur_lun < (0.75 + buffer)) {
+            return "🌗";
+        }
+
+        if (cur_lun < (1 - buffer)) {
+            return "🌘";
+        }
+
+        return "🌑";
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
+</script><meta property="og:title" content="PR Strategy" />
+<meta property="og:description" content="I left off in orbits after finding the &ldquo;Mentat Collective&rdquo; discord, which I would describe as a group of people working on tools for exploring physics and math. I shared some of what I had been doing, especially around visualization with d3-contours since they were chatting about potential demo&rsquo;s of their tools.
+This got me thinking of a conversation I had with a co-worker awhile ago. She told a story about how she was unhappy with her current job, and then went to the Recurse Center with the goal of getting a new, better job afterwards." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garden.pcarleton.com/post/pr-strategy/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-10T06:21:22&#43;01:00" />
+<meta property="article:modified_time" content="2022-05-10T06:21:22&#43;01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PR Strategy"/>
+<meta name="twitter:description" content="I left off in orbits after finding the &ldquo;Mentat Collective&rdquo; discord, which I would describe as a group of people working on tools for exploring physics and math. I shared some of what I had been doing, especially around visualization with d3-contours since they were chatting about potential demo&rsquo;s of their tools.
+This got me thinking of a conversation I had with a co-worker awhile ago. She told a story about how she was unhappy with her current job, and then went to the Recurse Center with the goal of getting a new, better job afterwards."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://garden.pcarleton.com/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "PR Strategy",
+      "item": "https://garden.pcarleton.com/post/pr-strategy/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PR Strategy",
+  "name": "PR Strategy",
+  "description": "I left off in orbits after finding the \u0026ldquo;Mentat Collective\u0026rdquo; discord, which I would describe as a group of people working on tools for exploring physics and math. I shared some of what I had been doing, especially around visualization with d3-contours since they were chatting about potential demo\u0026rsquo;s of their tools.\nThis got me thinking of a conversation I had with a co-worker awhile ago. She told a story about how she was unhappy with her current job, and then went to the Recurse Center with the goal of getting a new, better job afterwards.",
+  "keywords": [
+    
+  ],
+  "articleBody": "I left off in orbits after finding the “Mentat Collective” discord, which I would describe as a group of people working on tools for exploring physics and math. I shared some of what I had been doing, especially around visualization with d3-contours since they were chatting about potential demo’s of their tools.\nThis got me thinking of a conversation I had with a co-worker awhile ago. She told a story about how she was unhappy with her current job, and then went to the Recurse Center with the goal of getting a new, better job afterwards. She had a “PR strategy” for how she would publish her experience, get wide visibility and get more job offers. It worked and she got a new job that she loved.\nA “PR strategy” initially makes me feel gross. I start to squirm when things start to sound like “self-promotion”. It stems from being super annoyed when people come across as disingenuous and bragadocious, but the less easy part to admit is that I also squirm because it involves taking some risk. If you’re exposing the best you can do for the world to see, there’s a chance that the world is not that impressed! It reminded me of this quote from Deep Work (don’t hate me, I just read a summary):\n There’s also an uneasiness that surrounds any effort to produce the best things you’re capable of producing, as this forces you to confront the possibility that your best is not (yet) that good. It’s safer to comment on our culture than to step into the Rooseveltian ring and attempt to wrestle it into something better.\n One mental trick I’ve found myself turning to is referring back to Finite and Infinite Game, and think of how to enter a “competition” playfully. Getting folks to read what I write, or use the tools I make is in some sense a competition, where my stuff competes against all the other possible things they could be doing. This puts me in the mindset of how would I be selectively serious in trying to rank well in this “finite game” without forgetting that it’s a game, and I can stop playing whenever I want.\nThere’s a quote from Oliver Twist that James Carse uses:\n “If you don’t take pocket-handkechers and watches,” explains the Artful Dodger to Oliver “some other cove will; so that the coves that lost' em will be all the worse, and you’ll be all the worse too and nobody half a ha’p’orth the better, except the chaps wot gets them-and you’ve just as good a right to them as they have.”\n To me, that quote means that I’ve got just a good a shot at doing well in a “competition” for a well regarded tool as anyone else if I put my mind to it, and if I refuse to acknowledge that the game exists, someone else will play it and win. This helps get me into a creative mindset of how can I engage with this “game” and still have fun and be genuine. Next I’ll talk about my first foray into PR.\n",
+  "wordCount" : "520",
+  "inLanguage": "en",
+  "datePublished": "2022-05-10T06:21:22+01:00",
+  "dateModified": "2022-05-10T06:21:22+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://garden.pcarleton.com/post/pr-strategy/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paul's Garden",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://garden.pcarleton.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://garden.pcarleton.com" accesskey="h" title="Paul&#39;s Garden (Alt + H)">Paul&#39;s Garden</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      PR Strategy
+    </h1>
+    <div class="post-meta"><span title='2022-05-10 06:21:22 +0100 BST'>May 10, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>I left off in <a href="/post/orbits/">orbits</a> after finding the &ldquo;Mentat Collective&rdquo; discord, which I would describe as a group of people working on tools for exploring physics and math.  I shared some of what I had been doing, especially around visualization with d3-contours since they were chatting about potential demo&rsquo;s of their tools.</p>
+<p>This got me thinking of a conversation I had with a co-worker awhile ago.  She told a story about how she was unhappy with her current job, and then went to the <a href="https://www.recurse.com/">Recurse Center</a> with the goal of getting a new, better job afterwards. She had a &ldquo;PR strategy&rdquo; for how she would publish her experience, get wide visibility and get more job offers.  It worked and she got a new job that she loved.</p>
+<p>A &ldquo;PR strategy&rdquo; initially makes me feel gross.  I start to squirm when things start to sound like &ldquo;self-promotion&rdquo;.  It stems from being super annoyed when people come across as disingenuous and bragadocious, but the less easy part to admit is that I also squirm because it involves taking some risk.  If you&rsquo;re exposing the best you can do for the world to see, there&rsquo;s a chance that the world is not that impressed!  It reminded me of this quote from Deep Work (don&rsquo;t hate me, I just read <a href="https://sajithpai.com/wp-content/uploads/2016/06/Deep-Work-Summary.pdf">a summary</a>):</p>
+<blockquote>
+<p>There’s also an uneasiness that surrounds any effort to produce the best things you’re capable of producing, as this forces you to confront the possibility that your best is not (yet) that good. It’s safer to comment on our culture than to step into the Rooseveltian ring and attempt to wrestle it into something better.</p>
+</blockquote>
+<p>One mental trick I&rsquo;ve found myself turning to is referring back to <a href="/post/books/">Finite and Infinite Game</a>, and think of how to enter a &ldquo;competition&rdquo; playfully. Getting folks to read what I write, or use the tools I make is in some sense a competition, where my stuff competes against all the other possible things they could be doing. This puts me in the mindset of how would I be selectively serious in trying to rank well in this &ldquo;finite game&rdquo; without forgetting that it&rsquo;s a game, and I can stop playing whenever I want.</p>
+<p>There&rsquo;s a quote from Oliver Twist that James Carse uses:</p>
+<blockquote>
+<p>&ldquo;If you don&rsquo;t take pocket-handkechers and watches,&rdquo; explains the Artful Dodger to Oliver &ldquo;some other cove will; so that the coves that lost' em will be all the worse, and you&rsquo;ll be all the worse too and nobody half a ha&rsquo;p&rsquo;orth the better, except the chaps wot gets them-and you&rsquo;ve just as good a right to them as they have.&rdquo;</p>
+</blockquote>
+<p>To me, that quote means that I&rsquo;ve got just a good a shot at doing well in a &ldquo;competition&rdquo; for a well regarded tool as anyone else if I put my mind to it, and if I refuse to acknowledge that the game exists, someone else will play it and win. This helps get me into a creative mindset of how can I engage with this &ldquo;game&rdquo; and still have fun and be genuine.  Next I&rsquo;ll talk about my first foray into PR.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://garden.pcarleton.com">Paul&#39;s Garden</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

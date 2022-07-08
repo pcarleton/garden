@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Thoughts on Dall-e | Paul&#39;s Garden</title>
+<meta name="keywords" content="" />
+<meta name="description" content="What makes it fun? I&rsquo;ve been playing around with the mini-dalle&rsquo;s on my home computer (after wrestling with CUDA and WSL and jax, and then over engineering a tailscale setup with a sqlite queue so I could submit ideas from my phone).
+It can be quite fun and quite novel. With the &ldquo;non-dalle-2&rdquo; models, it can feel a little like panning for gold, or digging through a trash dump, but a trash dump of fairly interesting looking garbage.">
+<meta name="author" content="">
+<link rel="canonical" href="https://garden.pcarleton.com/post/dalle-thoughts/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://garden.pcarleton.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://garden.pcarleton.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://garden.pcarleton.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://garden.pcarleton.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://garden.pcarleton.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.93.0-DEV" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+
+    
+    var lun0 = new Date(947182440000);
+    var now = new Date();
+
+    
+    var diff_days = ((+now) - (+lun0)) / 1000   / 60   / 60 / 24;
+
+
+    
+    var mean_lunation = 29.530588;
+
+    
+    var diff_lun = diff_days / mean_lunation;
+
+    
+    var cur_lun = diff_lun - Math.floor(diff_lun);
+
+
+    function get_char(lun) {
+        var buffer = 0.015;
+        if (cur_lun < buffer) {
+            return "🌑";
+        }
+
+        if (cur_lun < (0.25 - buffer)) {
+            return "🌒";
+        }
+
+        if (cur_lun < (0.25 + buffer)) {
+            return "🌓";
+        }
+
+        if (cur_lun < (0.5 - buffer)) {
+            return "🌔";
+        }
+
+        if (cur_lun < (0.5 + buffer)) {
+            return "🌝";
+        }
+
+        if (cur_lun < (0.75 - buffer)) {
+            return "🌖";
+        }
+
+        if (cur_lun < (0.75 + buffer)) {
+            return "🌗";
+        }
+
+        if (cur_lun < (1 - buffer)) {
+            return "🌘";
+        }
+
+        return "🌑";
+    }
+
+
+    var cur_char = get_char(cur_lun);
+
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>' + cur_char + '</text></svg>';
+</script><meta property="og:title" content="Thoughts on Dall-e" />
+<meta property="og:description" content="What makes it fun? I&rsquo;ve been playing around with the mini-dalle&rsquo;s on my home computer (after wrestling with CUDA and WSL and jax, and then over engineering a tailscale setup with a sqlite queue so I could submit ideas from my phone).
+It can be quite fun and quite novel. With the &ldquo;non-dalle-2&rdquo; models, it can feel a little like panning for gold, or digging through a trash dump, but a trash dump of fairly interesting looking garbage." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://garden.pcarleton.com/post/dalle-thoughts/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-07-07T06:46:22&#43;01:00" />
+<meta property="article:modified_time" content="2022-07-07T06:46:22&#43;01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Thoughts on Dall-e"/>
+<meta name="twitter:description" content="What makes it fun? I&rsquo;ve been playing around with the mini-dalle&rsquo;s on my home computer (after wrestling with CUDA and WSL and jax, and then over engineering a tailscale setup with a sqlite queue so I could submit ideas from my phone).
+It can be quite fun and quite novel. With the &ldquo;non-dalle-2&rdquo; models, it can feel a little like panning for gold, or digging through a trash dump, but a trash dump of fairly interesting looking garbage."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://garden.pcarleton.com/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Thoughts on Dall-e",
+      "item": "https://garden.pcarleton.com/post/dalle-thoughts/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Thoughts on Dall-e",
+  "name": "Thoughts on Dall-e",
+  "description": "What makes it fun? I\u0026rsquo;ve been playing around with the mini-dalle\u0026rsquo;s on my home computer (after wrestling with CUDA and WSL and jax, and then over engineering a tailscale setup with a sqlite queue so I could submit ideas from my phone).\nIt can be quite fun and quite novel. With the \u0026ldquo;non-dalle-2\u0026rdquo; models, it can feel a little like panning for gold, or digging through a trash dump, but a trash dump of fairly interesting looking garbage.",
+  "keywords": [
+    
+  ],
+  "articleBody": "What makes it fun? I’ve been playing around with the mini-dalle’s on my home computer (after wrestling with CUDA and WSL and jax, and then over engineering a tailscale setup with a sqlite queue so I could submit ideas from my phone).\nIt can be quite fun and quite novel. With the “non-dalle-2” models, it can feel a little like panning for gold, or digging through a trash dump, but a trash dump of fairly interesting looking garbage.\nIt still feels like an accomplishment when you find something good. You “struck gold” in a sense. It’s not the same level of accomplishment you feel if you had drawn the thing yourself. You’re painstakingly honing your skill, and then feeling the physical niceness of a pencil in your hand, and the paper against your palm. The “done enough” decision is still there (you could keep submitting prompts forever), but you don’t get better at it in the same way.\nThings that worked really well for one thing don’t work well for another.\nMaybe I’m talking myself into this is a skill, but a very different kind of skill. And one that feels very shallow, or like it could evaporate as soon as a new model comes out. Who knows whether the embeddings in the new model react as well to your quirky semantic tricks, or have as good of knowledge of what a minion looks like in different poses.\nOne comparison that I think captures the fun of it is comparing it to a google image search. For very plain prompts, you could do a google image search, and get a stock photo back, or a painting of exactly what you said. And it would probably be way better than what a mini-dalle could come up with.\nWhen you search something where there’s only 1 search result, or no results is where things get interesting. The “CCTV footage” is one my favorites for this. There’s something really funny about seeing a blurry image of Yoda walking around a 7-eleven. It’s a combination of being extremely novel (like it’s actually Yoda sized, not a full-sized human dressed up as Yoda), it takes advantage of blurriness being okay, and it’s something someone would need to put a lot of effort in to produce themselves.\n cctv footage of Yoda robbing a liquor store, photo credit: kuprel on github   Cherry picking In some articles, and twitter threads, some folks have called foul on “cherry picking”. The gist is that because you might have had to generate 20 images in order to find that one amazing one, that it showcases a huge limitation of the model.\nOn the one hand, that’s fair. If you’re only seeing the cherry-picked, you might think that these models are much more capable than they are. But on the other hand… I don’t think it hides that much of their capability. I guess it means that it takes about 20x as long as you might expect and still requires a “human neural net” at the final stage to pick a winner. But I guess I take that as a given after generating so much garbage with the weaker models, so I don’t have any problem with cherry-picking. I’m here for Kermit in the matrix, don’t bog me down with the 19 other crappier versions of that prompt, I want to move on to see him in the Sopranos.\nI guess my take-away is that, “yes” we haven’t fully nailed down a generilizable understanding of human aesthetic preferences, but I guess I didn’t really think we were there anyway. Needing a human in the loop to iterate doesn’t seem like a huge “man behind the curtain” situation that some make it out to be.\nHomegrown The dalle-mini situation is very concisely summarized in this meme:\nI found it interesting that most of the diaspora (10$ word) of ML tools, and hosting platforms. dalle-flow had a whole framework it was using called Dina. There’s replicate which somehow hosts the mini-dalle at extremely impressive speeds for free. And there’s Colab, with its free and paid tier.\nAfter wrestling with my own graphics card and going to great lengths to get it to be able to queue up a bunch of runs, and then still finding my VRAM lacking for the biggest models, I understand while all the researchers and ML community assume you’re running in one of these platforms. It’s pretty impractical to get the resources to do these things without them.\nHowever, the amount of progress that mini-dalle made calls some of that into question. It seems like there’s a wide spectrum of optimizations you could do to in order for these models to be more widely deployable, and potentially higher quality.\nWhether that’s desirable is an interesting question.\nStyle \u0026 What is Art One other concern I saw (citation needed), is that this will put artists out of work. Or people will lost interest in art created by people. An example was about craftsmanship in clothes. The line of thinking is that once a bunch of automation was able to create super cheap clothes, then there was a much smaller market for people making high quality clothes since you could get a similar quality for cheaper.\nThat’s probably a valid concern! The place that’s probably most at risk is illustrators on sites like fiverr. Some times you want an image for like $50, and you hire someone to draw it. If it’s much quicker to have an AI generate one (maybe it’s for a blog, or for a game or something and your budget is tight), you’ll likely make do with an AI one even if it has some weird artifacts in it.\nSomething I didn’t expect is that generating a bunch of these made me appreciate human created art more. For instance, I did not know the word “ukiyo-e” before trying to generate a bunch of images. I find myself more excited to go to an art museum and learn about which art work is which styles. Will I then try to put elmo or wall-e in the style? Probably yes. Does that somehow make my interest “less than” pre-dall-e? I had rougly zero idea what different art styles meant before, so I think it’s a net positive.\nHere’s a bunch of different styles of darth vader and Yoda:\nDifferent strokes Also, I find technical drawings to be really appealing. For instance, I have this picture from an old German textbook in my office:\nTODO.\nTrying to get Dall-e to generate these pictures ends up looking like this:\nSome of these are very cool to look at, but they obviously aren’t as precise. In hindsight, it is pretty obvious these drawings wouldn’t have accurate orbital trajectories, and they do still look cool. It highlights the “shallow” nature of the art though. If I show a picture of the german text book, you can explain the back story of what those ellipses mean (well, theoretically I could, I’m not actually sure!), whereas the ellipses in these pictures don’t have the same precision or purpose behind them. The best you can do is say what prompt you put in, and maybe guess at where some of the source material came from (oh that looks like Kepler’s 1st law!)\nBias / Safety Some half formed thoughts on bias \u0026 safety\n Biggest concern for me: fake news / disinformation Conflicting thoughts: bias in the models Acknowledgement: it’s biased “in my favor” Is it the model’s job to correct “the internet” it’s reflecting? Maybe not, but maybe if your stated goal is general AI, and you don’t “correct” it, then this super powerful tool will also be biased. Similar to climate change, existing incentives don’t work to fix the problem. biased models are cheaper to generate since they don’t account for the cost Need some incentive to invest heavily into new technical improvements to “fix” the bias of the models that incentive is probably not shaming on Twitter, but bringing it up and talking about it is better than pretending it will just go away (similar to climate change) AI co’s would probably do well to start thinking of how they want to be regulated before they get some very ill-informed regulation that makes things worse   More funny pictures   cctv footage of elmo break dancing in a convenince storee     cctv footage of queen elizabeth in a convenince store   ",
+  "wordCount" : "1402",
+  "inLanguage": "en",
+  "datePublished": "2022-07-07T06:46:22+01:00",
+  "dateModified": "2022-07-07T06:46:22+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://garden.pcarleton.com/post/dalle-thoughts/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paul's Garden",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://garden.pcarleton.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://garden.pcarleton.com" accesskey="h" title="Paul&#39;s Garden (Alt + H)">Paul&#39;s Garden</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Thoughts on Dall-e
+    </h1>
+    <div class="post-meta"><span title='2022-07-07 06:46:22 +0100 BST'>July 7, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="what-makes-it-fun">What makes it fun?<a hidden class="anchor" aria-hidden="true" href="#what-makes-it-fun">#</a></h1>
+<p>I&rsquo;ve been playing around with the mini-dalle&rsquo;s on my home computer (after wrestling with CUDA and WSL and jax, and then over engineering a tailscale setup with a sqlite queue so I could submit ideas from my phone).</p>
+<p>It can be quite fun and quite novel.  With the &ldquo;non-dalle-2&rdquo; models, it can feel a little like panning for gold, or digging through a trash dump, but a trash dump of fairly interesting looking garbage.</p>
+<p>It still feels like an accomplishment when you find something good.  You &ldquo;struck gold&rdquo; in a sense. It&rsquo;s not the same level of accomplishment you feel if you had drawn the thing yourself.  You&rsquo;re painstakingly honing your skill, and then feeling the physical niceness of a pencil in your hand, and the paper against your palm.  The &ldquo;done enough&rdquo; decision is still there (you could keep submitting prompts forever), but you don&rsquo;t get better at it in the same way.</p>
+<p>Things that worked really well for one thing don&rsquo;t work well for another.</p>
+<p>Maybe I&rsquo;m talking myself into this is a skill, but a very different kind of skill.  And one that feels very shallow, or like it could evaporate as soon as a new model comes out.  Who knows whether the embeddings in the new model react as well to your quirky semantic tricks, or have as good of knowledge of what a minion looks like in different poses.</p>
+<p>One comparison that I think captures the fun of it is comparing it to a google image search.  For very plain prompts, you could do a google image search, and get a stock photo back, or a painting of exactly what you said. And it would probably be way better than what a mini-dalle could come up with.</p>
+<p>When you search something where there&rsquo;s only 1 search result, or no results is where things get interesting.  The &ldquo;CCTV footage&rdquo; is one my favorites for this.  There&rsquo;s something really funny about seeing a blurry image of Yoda walking around a 7-eleven.  It&rsquo;s a combination of being extremely novel (like it&rsquo;s actually Yoda sized, not a full-sized human dressed up as Yoda), it takes advantage of blurriness being okay, and it&rsquo;s something someone would need to put a lot of effort in to produce themselves.</p>
+<figure><a href="https://replicate.com/kuprel/min-dalle/examples">
+    <img loading="lazy" src="images/yoda.jpg"/> </a><figcaption>
+            cctv footage of Yoda robbing a liquor store, photo credit: kuprel on github
+        </figcaption>
+</figure>
+
+<h1 id="cherry-picking">Cherry picking<a hidden class="anchor" aria-hidden="true" href="#cherry-picking">#</a></h1>
+<p>In some articles, and twitter threads, some folks have called foul on &ldquo;cherry picking&rdquo;.  The gist is that because you might have had to generate 20 images in order to find that one amazing one, that it showcases a huge limitation of the model.</p>
+<p>On the one hand, that&rsquo;s fair.  If you&rsquo;re only seeing the cherry-picked, you might think that these models are much more capable than they are.  But on the other hand&hellip; I don&rsquo;t think it hides that much of their capability.  I guess it means that it takes about 20x as long as you might expect and still requires a &ldquo;human neural net&rdquo; at the final stage to pick a winner.  But I guess I take that as a given after generating so much garbage with the weaker models, so I don&rsquo;t have any problem with cherry-picking.  I&rsquo;m here for Kermit in the matrix, don&rsquo;t bog me down with the 19 other crappier versions of that prompt, I want to move on to see him in the Sopranos.</p>
+<p>I guess my take-away is that, &ldquo;yes&rdquo; we haven&rsquo;t fully nailed down a generilizable understanding of human aesthetic preferences, but I guess I didn&rsquo;t really think we were there anyway. Needing a human in the loop to iterate doesn&rsquo;t seem like a huge &ldquo;man behind the curtain&rdquo; situation that some make it out to be.</p>
+<h1 id="homegrown">Homegrown<a hidden class="anchor" aria-hidden="true" href="#homegrown">#</a></h1>
+<p>The dalle-mini situation is very concisely summarized in this meme:</p>
+<p>I found it interesting that most of the diaspora (10$ word) of ML tools, and hosting platforms.  dalle-flow had a whole framework it was using called Dina.  There&rsquo;s replicate which somehow hosts the mini-dalle at extremely impressive speeds for free.  And there&rsquo;s Colab, with its free and paid tier.</p>
+<p>After wrestling with my own graphics card and going to great lengths to get it to be able to queue up a bunch of runs, and then still finding my VRAM lacking for the biggest models, I understand while all the researchers and ML community assume you&rsquo;re running in one of these platforms.  It&rsquo;s pretty impractical to get the resources to do these things without them.</p>
+<p>However, the amount of progress that mini-dalle made calls some of that into question.  It seems like there&rsquo;s a wide spectrum of optimizations you could do to in order for these models to be more widely deployable, and potentially higher quality.</p>
+<p>Whether that&rsquo;s desirable is an interesting question.</p>
+<h1 id="style--what-is-art">Style &amp; What is Art<a hidden class="anchor" aria-hidden="true" href="#style--what-is-art">#</a></h1>
+<p>One other concern I saw (citation needed), is that this will put artists out of work.  Or people  will lost interest in art created by people.  An example was about craftsmanship in clothes.  The line of thinking is that once a bunch of automation was able to create super cheap clothes, then there was a much smaller market for people making high quality clothes since you could get a similar quality for cheaper.</p>
+<p>That&rsquo;s probably a valid concern! The place that&rsquo;s probably most at risk is illustrators on sites like fiverr.  Some times you want an image for like $50, and you hire someone to draw it.  If it&rsquo;s much quicker to have an AI generate one (maybe it&rsquo;s for a blog, or for a game or something and your budget is tight), you&rsquo;ll likely make do with an AI one even if it has some weird artifacts in it.</p>
+<p>Something I didn&rsquo;t expect is that generating a bunch of these made me appreciate human created art more.  For instance, I did not know the word &ldquo;ukiyo-e&rdquo; before trying to generate a bunch of images.  I find myself more excited to go to an art museum and learn about which art work is which styles.  Will I then try to put elmo or wall-e in the style? Probably yes.  Does that somehow make my interest &ldquo;less than&rdquo; pre-dall-e? I had rougly zero idea what different art styles meant before, so I think it&rsquo;s a net positive.</p>
+<p>Here&rsquo;s a bunch of different styles of darth vader and Yoda:</p>
+<h1 id="different-strokes">Different strokes<a hidden class="anchor" aria-hidden="true" href="#different-strokes">#</a></h1>
+<p>Also, I find technical drawings to be really appealing.  For instance, I have this picture from an old German textbook in my office:</p>
+<p>TODO.</p>
+<p>Trying to get Dall-e to generate these pictures ends up looking like this:</p>
+<p>Some of these are very cool to look at, but they obviously aren&rsquo;t as precise.  In hindsight, it is pretty obvious these drawings wouldn&rsquo;t have accurate orbital trajectories, and they do still look cool.  It highlights the &ldquo;shallow&rdquo; nature of the art though.  If I show a picture of the german text book, you can explain the back story of what those ellipses mean (well, theoretically I could, I&rsquo;m not actually sure!), whereas the ellipses in these pictures don&rsquo;t have the same precision or purpose behind them.  The best you can do is say what prompt you put in, and maybe guess at where some of the source material came from (oh that looks like Kepler&rsquo;s 1st law!)</p>
+<h1 id="bias--safety">Bias / Safety<a hidden class="anchor" aria-hidden="true" href="#bias--safety">#</a></h1>
+<p>Some half formed thoughts on bias &amp; safety</p>
+<ul>
+<li>Biggest concern for me: fake news / disinformation</li>
+<li>Conflicting thoughts: bias in the models</li>
+<li>Acknowledgement: it&rsquo;s biased &ldquo;in my favor&rdquo;</li>
+<li>Is it the model&rsquo;s job to correct &ldquo;the internet&rdquo; it&rsquo;s reflecting?</li>
+<li>Maybe not, but maybe if your stated goal is general AI, and you don&rsquo;t &ldquo;correct&rdquo; it, then this super powerful tool will also be biased.</li>
+<li>Similar to climate change, existing incentives don&rsquo;t work to fix the problem.  biased models are cheaper to generate since they don&rsquo;t account for the cost</li>
+<li>Need some incentive to invest heavily into new technical improvements to &ldquo;fix&rdquo; the bias of the models</li>
+<li>that incentive is <em>probably</em> not shaming on Twitter, but bringing it up and talking about it is  better than pretending it will just go away (similar to climate change)</li>
+<li>AI co&rsquo;s would probably do well to start thinking of how they want to be regulated before they get some very ill-informed regulation that makes things worse</li>
+<li></li>
+</ul>
+<h1 id="more-funny-pictures">More funny pictures<a hidden class="anchor" aria-hidden="true" href="#more-funny-pictures">#</a></h1>
+<figure>
+    <img loading="lazy" src="images/elmo_cctv.jpeg"/> <figcaption>
+            cctv footage of elmo break dancing in a convenince storee
+        </figcaption>
+</figure>
+
+<figure>
+    <img loading="lazy" src="images/queen_elizabeth_cctv.jpeg"/> <figcaption>
+            cctv footage of queen elizabeth in a convenince store
+        </figcaption>
+</figure>
+
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://garden.pcarleton.com">Paul&#39;s Garden</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

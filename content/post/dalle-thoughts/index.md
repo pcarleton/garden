@@ -56,6 +56,13 @@ Something I didn't expect is that generating a bunch of these made me appreciate
 
 Here's a bunch of different styles of darth vader and Yoda:
 
+{{< figure src="images/darth vader and yoda as a one line drawing_1.jpeg" title="darth vader and yoda as a one line drawing">}}
+
+{{< figure src="images/darth vader and yoda in the style of ukiyo-e_6.jpeg" title="darth vader and yoda in the style of ukiyo-e">}}
+
+{{< figure src="images/painting of darth vader and yoda by Monet_4.jpeg" title="painting of darth vader and yoda by Monet">}}
+
+
 
 # Different strokes
 
